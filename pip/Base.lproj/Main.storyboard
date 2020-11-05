@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7xj-tj-zso" customClass="PlayerView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="233"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7xj-tj-zso" secondAttribute="height" multiplier="16:9" id="pBb-ga-w5O"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="yZe-eb-Ngj" appends="YES" id="Ufg-Mr-C9j"/>
+                                </connections>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="tU9-9Y-8zG">
+                                <rect key="frame" x="106" y="297" width="202" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nrm-9k-8gh" userLabel="play">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="Mzf-GW-u7w"/>
+                                            <constraint firstAttribute="height" constant="40" id="O2j-vQ-mN0"/>
+                                        </constraints>
+                                        <state key="normal" image="play.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3dP-m3-FQT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTC-th-aMt" userLabel="stop">
+                                        <rect key="frame" x="81" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="byA-Fe-vMK"/>
+                                            <constraint firstAttribute="width" constant="40" id="jac-nU-r8t"/>
+                                        </constraints>
+                                        <state key="normal" image="pause.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="pause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Up-37-AfZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWV-mo-6fq" userLabel="pip">
+                                        <rect key="frame" x="162" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="7Yd-SG-DmQ"/>
+                                            <constraint firstAttribute="width" constant="40" id="N60-dq-5Za"/>
+                                        </constraints>
+                                        <state key="normal" image="pip.swap" catalog="system"/>
+                                        <connections>
+                                            <action selector="pip:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cq5-VF-6LC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7xj-tj-zso" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Byw-Ow-M8T"/>
+                            <constraint firstItem="tU9-9Y-8zG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZyI-ph-08M"/>
+                            <constraint firstItem="7xj-tj-zso" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bCa-DW-uEd"/>
+                            <constraint firstItem="7xj-tj-zso" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="epK-mc-VoA"/>
+                            <constraint firstItem="tU9-9Y-8zG" firstAttribute="top" secondItem="7xj-tj-zso" secondAttribute="bottom" constant="20" id="lWh-eo-yLB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pauseButton" destination="PTC-th-aMt" id="4D5-gk-GkR"/>
+                        <outlet property="pipButton" destination="vWV-mo-6fq" id="R2Z-mG-9hb"/>
+                        <outlet property="playButton" destination="Nrm-9k-8gh" id="rKY-yN-aMT"/>
+                        <outlet property="playerView" destination="7xj-tj-zso" id="YHX-e1-4s8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="yZe-eb-Ngj">
+                    <connections>
+                        <action selector="longPress:" destination="BYZ-38-t0r" id="mNX-Nn-wnd"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="93.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pause.fill" catalog="system" width="116" height="128"/>
+        <image name="pip.swap" catalog="system" width="128" height="96"/>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
